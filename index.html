@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="fr">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <meta content="Portfolio de Mohamed Reda Ouaddi, ingénieur Full Stack Java, Spring Boot et Angular à Casablanca." name="description"/>
+  <title>
+   Mohamed Reda Ouaddi | Ingénieur Full Stack
+  </title>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+  <style>
+   :root {
+    --bg:#060b17;
+    --panel:#111b2d;
+    --border:#26334a;
+    --text:#f6f8fc;
+    --muted:#a6b2c6;
+    --orange:#fb923c;
+    --orange2:#f97316
+}
+
+* {
+    box-sizing:border-box
+}
+
+html {
+    scroll-behavior:smooth;
+    scroll-padding-top:85px
+}
+
+body {
+    margin:0;
+    background:radial-gradient(ellipse at 75% 0%,#192641 0%,var(--bg) 50%);
+    color:var(--text);
+    font-family:Poppins,sans-serif;
+    line-height:1.7
+}
+
+a {
+    color:inherit;
+    text-decoration:none
+}
+
+button {
+    font:inherit
+}
+
+.container {
+    width:min(1120px,90%);
+    margin:auto
+}
+
+header {
+    position:sticky;
+    top:0;
+    z-index:10;
+    background:#08101fe8;
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid var(--border)
+}
+
+.nav {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    min-height:76px;
+    gap:18px
+}
+
+.brand {
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-weight:700;
+    letter-spacing:.03em
+}
+
+.monogram {
+    display:grid;
+    place-items:center;
+    width:42px;
+    height:42px;
+    border-radius:14px;
+    background:#f9731620;
+    border:1px solid var(--orange);
+    color:var(--orange)
+}
+
+.links {
+    display:flex;
+    gap:20px;
+    align-items:center
+}
+
+.links a {
+    font-size:13px;
+    color:var(--muted)
+}
+
+.links a:hover,.text-link:hover {
+    color:var(--orange)
+}
+
+.btn {
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:9px;
+    padding:11px 19px;
+    border-radius:12px;
+    font-size:13px;
+    font-weight:600;
+    border:1px solid var(--orange);
+    transition:.2s
+}
+
+.btn:hover {
+    transform:translateY(-2px)
+}
+
+.primary {
+    background:linear-gradient(110deg,var(--orange2),#ffae62);
+    color:#101522
+}
+
+.outline {
+    color:var(--text)
+}
+
+.menu-toggle {
+    display:none;
+    background:transparent;
+    border:1px solid var(--border);
+    color:white;
+    border-radius:10px;
+    padding:8px 12px
+}
+
+.hero {
+    display:grid;
+    grid-template-columns:1.5fr 1fr;
+    align-items:center;
+    gap:55px;
+    padding:100px 0 75px
+}
+
+.eyebrow,.kicker {
+    color:var(--orange);
+    text-transform:uppercase;
+    letter-spacing:.18em;
+    font-size:12px;
+    font-weight:700
+}
+
+.hero h1 {
+    font-size:clamp(36px,5vw,62px);
+    line-height:1.15;
+    letter-spacing:-.04em;
+    margin:14px 0
+}
+
+.gradient {
+    background:linear-gradient(90deg,#ff8b34,#ffd27b);
+    background-clip:text;
+    -webkit-background-clip:text;
+    color:transparent
+}
+
+.hero h2 {
+    font-size:clamp(17px,2.2vw,23px);
+    font-weight:500;
+    margin:0 0 18px
+}
+
+.lead {
+    color:var(--muted);
+    max-width:650px;
+    font-size:14px
+}
+
+.pills,.actions,.tags {
+    display:flex;
+    gap:9px;
+    flex-wrap:wrap;
+    margin-top:22px
+}
+
+.pill,.tag {
+    padding:6px 11px;
+    background:#172338;
+    border:1px solid var(--border);
+    border-radius:30px;
+    font-size:11px;
+    color:#d5ddea
+}
+
+.actions {
+    margin-top:28px
+}
+
+.profile {
+    padding:26px;
+    border-radius:25px;
+    background:radial-gradient(circle at top left,#fa89201a,transparent 60%),var(--panel);
+    border:1px solid var(--border);
+    box-shadow:0 20px 60px #0005
+}
+
+.photo {
+    width:120px;
+    height:140px;
+    object-fit:cover;
+    border-radius:20px;
+    border:2px solid var(--orange);
+    background:#253047
+}
+
+.avatar-fallback {
+    display:grid;
+    place-items:center;
+    font-size:45px;
+    color:var(--orange);
+    font-weight:700
+}
+
+.profile h3 {
+    margin:15px 0 0;
+    font-size:20px
+}
+
+.profile p {
+    margin:3px 0;
+    color:var(--muted);
+    font-size:13px
+}
+
+.profile hr {
+    border:0;
+    border-top:1px solid var(--border);
+    margin:20px 0
+}
+
+.facts {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+    font-size:12px;
+    overflow-wrap:anywhere
+}
+
+.facts small {
+    display:block;
+    color:var(--muted);
+    font-size:10px;
+    text-transform:uppercase;
+    letter-spacing:.08em
+}
+
+.available {
+    color:#86efac!important;
+    margin-top:20px!important
+}
+
+section {
+    padding:62px 0
+}
+
+.section-head {
+    margin-bottom:27px
+}
+
+.section-head h2 {
+    font-size:clamp(24px,3vw,34px);
+    margin:6px 0
+}
+
+.section-head p {
+    color:var(--muted);
+    font-size:13px;
+    max-width:650px;
+    margin:0
+}
+
+.grid {
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:20px
+}
+
+.card {
+    padding:25px;
+    border:1px solid var(--border);
+    background:var(--panel);
+    border-radius:19px
+}
+
+.card h3 {
+    font-size:17px;
+    margin:0 0 10px
+}
+
+.card p,.card li {
+    color:#cbd5e1;
+    font-size:13px
+}
+
+.card ul {
+    padding-left:20px
+}
+
+.card li {
+    margin-bottom:8px
+}
+
+.muted {
+    color:var(--muted);
+    font-size:12px
+}
+
+.tag {
+    margin:0 5px 7px 0;
+    font-size:11px
+}
+
+.timeline {
+    border-left:1px solid #45516a;
+    margin-left:8px;
+    padding-left:23px
+}
+
+.entry {
+    position:relative;
+    margin-bottom:27px
+}
+
+.entry:last-child {
+    margin-bottom:0
+}
+
+.entry:before {
+    content:'';
+    position:absolute;
+    left:-30px;
+    top:8px;
+    width:11px;
+    height:11px;
+    border-radius:50%;
+    background:var(--orange);
+    box-shadow:0 0 0 4px #fb923c22
+}
+
+.entry h3 {
+    margin-bottom:3px
+}
+
+.entry p {
+    margin:9px 0
+}
+
+.featured {
+    border-color:#f9731659;
+    background:linear-gradient(140deg,#2c211d,var(--panel) 48%)
+}
+
+.project-number {
+    color:var(--orange);
+    font-size:12px;
+    font-weight:700
+}
+
+.contact {
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    gap:20px
+}
+
+.contact a {
+    overflow-wrap:anywhere
+}
+
+.contact-line {
+    padding:12px 0;
+    border-bottom:1px solid var(--border)
+}
+
+.contact-line:last-child {
+    border:0
+}
+
+.contact-line small {
+    display:block;
+    color:var(--muted);
+    font-size:11px
+}
+
+.qr {
+    display:grid;
+    place-items:center;
+    text-align:center
+}
+
+.qr img {
+    width:160px;
+    height:160px;
+    object-fit:contain;
+    background:white;
+    border-radius:12px;
+    padding:9px
+}
+
+.qr p {
+    color:var(--muted);
+    font-size:12px
+}
+
+footer {
+    padding:35px 0;
+    border-top:1px solid var(--border);
+    color:var(--muted);
+    text-align:center;
+    font-size:12px
+}
+
+footer strong {
+    color:var(--orange)
+}
+
+@media(max-width:900px) {
+    .hero {
+    grid-template-columns:1fr;
+    gap:28px;
+    padding-top:60px
+}
+
+.profile {
+    max-width:480px
+}
+
+.links {
+    display:none;
+    position:absolute;
+    top:75px;
+    left:0;
+    right:0;
+    background:#0b1425;
+    padding:20px 5%;
+    flex-direction:column;
+    align-items:flex-start;
+    border-bottom:1px solid var(--border)
+}
+
+.links.open {
+    display:flex
+}
+
+.menu-toggle {
+    display:block
+}
+
+.nav>.btn {
+    display:none
+}
+
+
+}
+
+@media(max-width:650px) {
+    .grid,.contact {
+    grid-template-columns:1fr
+}
+
+.hero {
+    padding-top:45px
+}
+
+.facts {
+    gap:12px
+}
+
+.card {
+    padding:20px
+}
+
+section {
+    padding:45px 0
+}
+
+
+}
+  </style>
+ </head>
+ <body>
+  <header>
+   <div class="container nav">
+    <a class="brand" href="#about">
+     <span class="monogram">
+      R
+     </span>
+     <span>
+      MOHAMED REDA OUADDI
+     </span>
+    </a>
+    <nav aria-label="Navigation principale" class="links" id="navLinks">
+     <a href="#about">
+      À propos
+     </a>
+     <a href="#skills">
+      Compétences
+     </a>
+     <a href="#experience">
+      Expérience
+     </a>
+     <a href="#projects">
+      Projets
+     </a>
+     <a href="#education">
+      Formation
+     </a>
+     <a href="#contact">
+      Contact
+     </a>
+    </nav>
+    <a class="btn outline" href="mailto:redaouaddi3@gmail.com">
+     Me contacter ↗
+    </a>
+    <button aria-controls="navLinks" aria-expanded="false" aria-label="Ouvrir le menu" class="menu-toggle" id="menuToggle">
+     ☰
+    </button>
+   </div>
+  </header>
+  <main class="container">
+   <section class="hero" id="about">
+    <div>
+     <div class="eyebrow">
+      Ingénieur d'État · Informatique &amp; Réseaux
+     </div>
+     <h1>
+      Mohamed Reda
+      <span class="gradient">
+       Ouaddi.
+      </span>
+     </h1>
+     <h2>
+      Ingénieur Full Stack
+      <span class="gradient">
+       Java / Spring Boot / Angular
+      </span>
+     </h2>
+     <p class="lead">
+      Diplômé de l'EMSI en 2026, je conçois et développe des applications web performantes, sécurisées et adaptées aux besoins métier. Chez DXC Technology, j'ai travaillé sur une plateforme intelligente de gestion des réclamations, de la conception au déploiement Docker, avec intégration d'un chatbot LLM et de la reconnaissance faciale.
+     </p>
+     <div class="pills">
+      <span class="pill">
+       📍 Casablanca, Maroc
+      </span>
+      <span class="pill">
+       ✓ Disponible immédiatement
+      </span>
+      <span class="pill">
+       🎓 EMSI · Promotion 2026
+      </span>
+     </div>
+     <div class="actions">
+      <a class="btn primary" href="#projects">
+       Découvrir mes projets ↗
+      </a>
+      <a class="btn outline" href="https://www.linkedin.com/in/reda-ouaddi-123b99191/" rel="noopener noreferrer" target="_blank">
+       LinkedIn
+      </a>
+      <a class="btn outline" href="https://github.com/redaouaddi" rel="noopener noreferrer" target="_blank">
+       GitHub
+      </a>
+     </div>
+    </div>
+    <aside class="profile">
+     <img alt="Portrait de Mohamed Reda Ouaddi" class="photo" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'" src="images/IMG cv.jpeg"/>
+     <div class="photo avatar-fallback" style="display:none">
+      MR
+     </div>
+     <h3>
+      Mohamed Reda Ouaddi
+     </h3>
+     <p>
+      Développeur Full Stack Java / Angular
+     </p>
+     <p>
+      Casablanca, Maroc
+     </p>
+     <hr/>
+     <div class="facts">
+      <div>
+       <small>
+        Email
+       </small>
+       <a href="mailto:redaouaddi3@gmail.com">
+        redaouaddi3@gmail.com
+       </a>
+      </div>
+      <div>
+       <small>
+        Téléphone
+       </small>
+       <a href="tel:+212645152888">
+        +212 6 45 15 28 88
+       </a>
+      </div>
+      <div>
+       <small>
+        Spécialités
+       </small>
+       Spring Boot · Angular · Docker
+      </div>
+      <div>
+       <small>
+        Langues
+       </small>
+       Arabe · Français · Anglais
+      </div>
+     </div>
+     <p class="available">
+      ● Ouvert aux opportunités professionnelles
+     </p>
+    </aside>
+   </section>
+   <section id="skills">
+    <div class="section-head">
+     <div class="kicker">
+      Expertise
+     </div>
+     <h2>
+      Compétences techniques
+     </h2>
+     <p>
+      Un socle Full Stack complété par des compétences en IA, DevOps, bases de données et méthodologies agiles.
+     </p>
+    </div>
+    <div class="grid">
+     <article class="card">
+      <h3>
+       ⚙️ Back-end
+      </h3>
+      <div class="tags">
+       <span class="tag">
+        Java
+       </span>
+       <span class="tag">
+        Spring Boot
+       </span>
+       <span class="tag">
+        Spring Security
+       </span>
+       <span class="tag">
+        API REST
+       </span>
+       <span class="tag">
+        Python
+       </span>
+       <span class="tag">
+        C# / .NET
+       </span>
+       <span class="tag">
+        PHP
+       </span>
+      </div>
+     </article>
+     <article class="card">
+      <h3>
+       🎨 Front-end &amp; mobile
+      </h3>
+      <div class="tags">
+       <span class="tag">
+        Angular
+       </span>
+       <span class="tag">
+        TypeScript
+       </span>
+       <span class="tag">
+        JavaScript
+       </span>
+       <span class="tag">
+        HTML5
+       </span>
+       <span class="tag">
+        CSS3
+       </span>
+       <span class="tag">
+        Flutter
+       </span>
+       <span class="tag">
+        Android
+       </span>
+      </div>
+     </article>
+     <article class="card">
+      <h3>
+       🗄️ Bases de données
+      </h3>
+      <div class="tags">
+       <span class="tag">
+        PostgreSQL
+       </span>
+       <span class="tag">
+        MySQL
+       </span>
+       <span class="tag">
+        Oracle SQL
+       </span>
+       <span class="tag">
+        PL/SQL
+       </span>
+       <span class="tag">
+        Oracle APEX
+       </span>
+       <span class="tag">
+        Firebase
+       </span>
+      </div>
+     </article>
+     <article class="card">
+      <h3>
+       🤖 IA &amp; Data
+      </h3>
+      <div class="tags">
+       <span class="tag">
+        Ollama / LLM local
+       </span>
+       <span class="tag">
+        Chatbots
+       </span>
+       <span class="tag">
+        DeepFace
+       </span>
+       <span class="tag">
+        OpenCV
+       </span>
+       <span class="tag">
+        OCR
+       </span>
+       <span class="tag">
+        Power BI
+       </span>
+      </div>
+     </article>
+     <article class="card">
+      <h3>
+       ☁️ DevOps &amp; Cloud
+      </h3>
+      <div class="tags">
+       <span class="tag">
+        Docker
+       </span>
+       <span class="tag">
+        Git / GitHub
+       </span>
+       <span class="tag">
+        Oracle Cloud (OCI)
+       </span>
+       <span class="tag">
+        Linux / Unix
+       </span>
+      </div>
+     </article>
+     <article class="card">
+      <h3>
+       🤝 Méthodes &amp; qualités
+      </h3>
+      <div class="tags">
+       <span class="tag">
+        Agile / Scrum
+       </span>
+       <span class="tag">
+        Tests unitaires
+       </span>
+       <span class="tag">
+        Tests d'intégration
+       </span>
+       <span class="tag">
+        UML
+       </span>
+       <span class="tag">
+        Merise
+       </span>
+       <span class="tag">
+        Esprit d'équipe
+       </span>
+       <span class="tag">
+        Adaptabilité
+       </span>
+      </div>
+     </article>
+    </div>
+   </section>
+   <section id="experience">
+    <div class="section-head">
+     <div class="kicker">
+      Parcours
+     </div>
+     <h2>
+      Expérience professionnelle
+     </h2>
+     <p>
+      Des projets de développement menés dans des environnements d'entreprise variés.
+     </p>
+    </div>
+    <div class="card">
+     <div class="timeline">
+      <div class="entry">
+       <h3>
+        Ingénieur Full Stack · DXC Technology
+       </h3>
+       <div class="muted">
+        Stage de fin d'études · Février – Août 2026
+       </div>
+       <p>
+        Développement d'une plateforme intelligente de gestion des réclamations clients, avec suivi en temps réel et tableau de bord décisionnel.
+       </p>
+       <ul>
+        <li>
+         API REST et sécurité applicative en Java 22, Spring Boot et Spring Security.
+        </li>
+        <li>
+         Tableau de bord Angular 21 et notifications automatiques.
+        </li>
+        <li>
+         Chatbot LLM local (Ollama) et reconnaissance faciale Python (DeepFace, OpenCV).
+        </li>
+        <li>
+         Migration MySQL vers PostgreSQL, conteneurisation Docker, tests et documentation.
+        </li>
+        <li>
+         Analyse des besoins, diagrammes UML et organisation Agile/Scrum.
+        </li>
+       </ul>
+      </div>
+      <div class="entry">
+       <h3>
+        Développeur Web · Resolution Data
+       </h3>
+       <div class="muted">
+        Stage · Juillet – Août 2025
+       </div>
+       <p>
+        Développement de Recru360, une plateforme de recrutement digitalisée avec workflows de validation, notifications email, tests et déploiement. Réduction de plus de 40 % du temps de traitement indiquée dans le CV.
+       </p>
+      </div>
+      <div class="entry">
+       <h3>
+        Stagiaire Développement · Crédit du Maroc
+       </h3>
+       <div class="muted">
+        Juillet – Août 2024
+       </div>
+       <p>
+        Contribution à une application centralisée de gestion des stocks, commandes et achats ; participation aux tests et à la mise en production.
+       </p>
+      </div>
+      <div class="entry">
+       <h3>
+        Stagiaire Développement · Somaport
+       </h3>
+       <div class="muted">
+        Juillet – Août 2023
+       </div>
+       <p>
+        Développement et tests fonctionnels d'une application C# de suivi des stocks de médicaments et des inventaires.
+       </p>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section id="projects">
+    <div class="section-head">
+     <div class="kicker">
+      Réalisations
+     </div>
+     <h2>
+      Projets sélectionnés
+     </h2>
+     <p>
+      Des solutions web et mobiles associant développement applicatif, automatisation et intelligence artificielle.
+     </p>
+    </div>
+    <div class="grid">
+     <article class="card featured">
+      <span class="project-number">
+       PROJET PHARE · DXC TECHNOLOGY
+      </span>
+      <h3>
+       Plateforme intelligente de gestion des réclamations
+      </h3>
+      <p>
+       Gestion des réclamations et des workflows, suivi des demandes, tableaux de bord, chatbot LLM local et reconnaissance faciale. Application déployée avec Docker.
+      </p>
+      <div class="tags">
+       <span class="tag">
+        Java 22
+       </span>
+       <span class="tag">
+        Spring Boot
+       </span>
+       <span class="tag">
+        Angular 21
+       </span>
+       <span class="tag">
+        PostgreSQL
+       </span>
+       <span class="tag">
+        Ollama
+       </span>
+       <span class="tag">
+        DeepFace
+       </span>
+       <span class="tag">
+        Docker
+       </span>
+      </div>
+     </article>
+     <article class="card">
+      <span class="project-number">
+       PROJET PROFESSIONNEL
+      </span>
+      <h3>
+       Recru360
+      </h3>
+      <p>
+       Plateforme de recrutement digitalisée : suivi des candidatures, workflows de validation et notifications automatiques par email.
+      </p>
+      <div class="tags">
+       <span class="tag">
+        PHP
+       </span>
+       <span class="tag">
+        Java
+       </span>
+       <span class="tag">
+        HTML5 / CSS3
+       </span>
+       <span class="tag">
+        UML
+       </span>
+      </div>
+     </article>
+     <article class="card">
+      <span class="project-number">
+       PROJET ACADÉMIQUE
+      </span>
+      <h3>
+       OCR CIN
+      </h3>
+      <p>
+       Extraction automatique des informations d'une carte d'identité nationale, avec interface de vérification et validation manuelle.
+      </p>
+      <div class="tags">
+       <span class="tag">
+        Spring Boot
+       </span>
+       <span class="tag">
+        Angular
+       </span>
+       <span class="tag">
+        OCR
+       </span>
+      </div>
+     </article>
+     <article class="card">
+      <span class="project-number">
+       PROJET ACADÉMIQUE
+      </span>
+      <h3>
+       MediScan AI
+      </h3>
+      <p>
+       Application mobile d'aide au diagnostic médical par analyse d'images à l'aide de l'intelligence artificielle.
+      </p>
+      <div class="tags">
+       <span class="tag">
+        Flutter
+       </span>
+       <span class="tag">
+        Python
+       </span>
+       <span class="tag">
+        IA
+       </span>
+      </div>
+     </article>
+     <article class="card">
+      <span class="project-number">
+       PROJET ACADÉMIQUE
+      </span>
+      <h3>
+       EMSI Smart Absence
+      </h3>
+      <p>
+       Gestion des présences avec QR code, géolocalisation et synchronisation des données en temps réel.
+      </p>
+      <div class="tags">
+       <span class="tag">
+        Android
+       </span>
+       <span class="tag">
+        Firebase
+       </span>
+       <span class="tag">
+        QR Code
+       </span>
+      </div>
+     </article>
+    </div>
+   </section>
+   <section id="education">
+    <div class="section-head">
+     <div class="kicker">
+      Formation &amp; reconnaissance
+     </div>
+     <h2>
+      Diplômes et certifications
+     </h2>
+    </div>
+    <div class="grid">
+     <article class="card">
+      <h3>
+       🎓 Formation
+      </h3>
+      <p>
+       <strong>
+        Diplôme d'Ingénieur d'État en Informatique et Réseaux
+       </strong>
+       <br/>
+       EMSI, Casablanca · 2021–2026
+      </p>
+      <p>
+       Baccalauréat Sciences Physiques et Chimiques · 2021
+      </p>
+     </article>
+     <article class="card">
+      <h3>
+       🏅 Certifications
+      </h3>
+      <p>
+       Oracle APEX Cloud Developer Certified Professional
+      </p>
+      <p>
+       OCI 2025 Certified DevOps Professional
+      </p>
+      <p>
+       Coursera : Python, SQL, JavaScript, Java POO, Software Engineering
+      </p>
+      <p>
+       Forage : simulation Power BI
+      </p>
+     </article>
+     <article class="card">
+      <h3>
+       🌍 Langues
+      </h3>
+      <p>
+       Arabe : langue maternelle
+       <br/>
+       Français : courant
+       <br/>
+       Anglais : courant
+      </p>
+     </article>
+     <article class="card">
+      <h3>
+       🤝 Engagement associatif
+      </h3>
+      <p>
+       JLM Casablanca · Responsable des projets (2024–2025)
+      </p>
+      <p>
+       JLM EMSI · Coordinateur (2023–2024)
+      </p>
+     </article>
+    </div>
+   </section>
+   <section id="contact">
+    <div class="section-head">
+     <div class="kicker">
+      Échangeons
+     </div>
+     <h2>
+      Entrer en contact
+     </h2>
+     <p>
+      Je recherche un poste de développeur Full Stack Java / Angular à Casablanca. Discutons de vos projets et opportunités.
+     </p>
+    </div>
+    <div class="contact">
+     <div class="card">
+      <div class="contact-line">
+       <small>
+        Email
+       </small>
+       <a class="text-link" href="mailto:redaouaddi3@gmail.com">
+        redaouaddi3@gmail.com
+       </a>
+      </div>
+      <div class="contact-line">
+       <small>
+        Téléphone
+       </small>
+       <a class="text-link" href="tel:+212645152888">
+        +212 6 45 15 28 88
+       </a>
+      </div>
+      <div class="contact-line">
+       <small>
+        LinkedIn
+       </small>
+       <a class="text-link" href="https://www.linkedin.com/in/reda-ouaddi-123b99191/" rel="noopener noreferrer" target="_blank">
+        linkedin.com/in/reda-ouaddi-123b99191
+       </a>
+      </div>
+      <div class="contact-line">
+       <small>
+        GitHub
+       </small>
+       <a class="text-link" href="https://github.com/redaouaddi" rel="noopener noreferrer" target="_blank">
+        github.com/redaouaddi
+       </a>
+      </div>
+      <div class="contact-line">
+       <small>
+        Localisation
+       </small>
+       Casablanca, Maroc
+      </div>
+     </div>
+     <div class="card qr">
+      <div>
+       <img alt="QR code du profil LinkedIn" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" src="images/qr_linkedin_reda.png"/>
+       <p style="display:none">
+        <a class="btn outline" href="https://www.linkedin.com/in/reda-ouaddi-123b99191/">
+         Ouvrir LinkedIn ↗
+        </a>
+       </p>
+       <p>
+        Scannez pour accéder à mon LinkedIn
+       </p>
+       <a class="btn primary" href="mailto:redaouaddi3@gmail.com">
+        Envoyer un email ↗
+       </a>
+      </div>
+     </div>
+    </div>
+   </section>
+  </main>
+  <footer>
+   ©
+   <span id="year">
+    2026
+   </span>
+   <strong>
+    Mohamed Reda Ouaddi
+   </strong>
+   · Portfolio Full Stack
+  </footer>
+  <script>
+   const toggle=document.getElementById('menuToggle'),nav=document.getElementById('navLinks');toggle.addEventListener('click',()=>{const opened=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',String(opened));toggle.textContent=opened?'✕':'☰'});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.textContent='☰'}));document.getElementById('year').textContent=new Date().getFullYear();
+  </script>
+ </body>
+</html>
